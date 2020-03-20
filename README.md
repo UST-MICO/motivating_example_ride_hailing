@@ -1,47 +1,12 @@
-# test_message_generator
+# Motivating Example
 
-A message producer, that generates messages randomly for testing purposes.
 
 ## Commands
 
-### Start generator with test environment
-
-This will start up the generator together with Kafka and ZooKeeper
+### Start application with test environment
 
 ```bash
 docker-compose up -d
-```
-
-### Start generator with test environment and additional message logger
-
-Additionally to the previous command, it will start the app `message_generator/test_receiver.py`. (This is useful for checking if the Kafka setting actually works).
-
-```bash
-docker-compose -f docker-compose-with-testreceiver.yaml up -d
-```
-
-You can read the logs as follows:
-
-```bash
-docker logs -ft test-receiver
-```
-
-### Start only the generator
-
-Here you have to provide the environment variables and install the dependencies manually.
-
-```bash
-pip3 install -r requirements.txt
-source environ.sh
-python3 message_generator/__main__.py
-```
-
-### Execute the tests
-
-This will start up a testing environment (Kafka and ZooKeeper) and run all tests. Afterwards the test environment is stopped
-
-```bash
-./bin/test.sh
 ```
 
 ### Running in Kubernetes cluster
