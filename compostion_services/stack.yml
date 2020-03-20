@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  message-filter:
+    lang: node
+    handler: ./message-filter
+    image: ckrieger/message-filter:latest
+  content-based-router:
+    lang: node
+    handler: ./content-based-router
+    image: ckrieger/content-based-router
